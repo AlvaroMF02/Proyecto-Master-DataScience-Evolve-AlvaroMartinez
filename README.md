@@ -10,8 +10,6 @@ The project includes:
 * Power BI dashboard for business insights
 
 ---
-Dataset (https://www.kaggle.com/datasets/radheshyamkollipara/bank-customer-churn)
----
 
 # Technologies Used
 
@@ -123,7 +121,8 @@ Possible future improvements for the project:
 * Add explainability techniques such as SHAP values for model interpretation
 
 ---
-
+Dataset (https://www.kaggle.com/datasets/radheshyamkollipara/bank-customer-churn)
+---
 # Author
 
 Álvaro Martínez Flores

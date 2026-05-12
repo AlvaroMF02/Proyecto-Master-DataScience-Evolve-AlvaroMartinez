@@ -10,6 +10,8 @@ The project includes:
 * Power BI dashboard for business insights
 
 ---
+Dataset (https://www.kaggle.com/datasets/radheshyamkollipara/bank-customer-churn)
+---
 
 # Technologies Used
 

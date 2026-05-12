@@ -108,6 +108,20 @@ The project achieved strong classification results using ensemble models, especi
 
 ---
 
+# Future Improvements
+
+Possible future improvements for the project:
+
+* Develop a REST API using Flask or FastAPI for real-time churn predictions
+* Create a web interface connected to the trained models
+* Refactor preprocessing and training logic into reusable Python modules (`src/`)
+* Add hyperparameter tuning and cross-validation optimization
+* Deploy the project using cloud services or Docker
+* Improve dashboard interactivity and filtering capabilities
+* Add explainability techniques such as SHAP values for model interpretation
+
+---
+
 # Author
 
 Álvaro Martínez Flores

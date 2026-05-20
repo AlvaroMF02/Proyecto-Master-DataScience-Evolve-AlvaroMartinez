@@ -1,6 +1,7 @@
 # entorno virtual
 .venv/
-venv
+venv/
+
 # cache python
 __pycache__/
 *.pyc
@@ -16,9 +17,12 @@ data/processed/*
 models/*
 !models/.gitkeep
 
-# outputs generados
-reports/*
-!reports/.gitkeep
+# ignorar imágenes generadas
+reports/figures/*
+
+# mantener métricas
+!reports/metrics/
+!reports/metrics/*
 
 # sistema
 .DS_Store

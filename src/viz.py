@@ -33,7 +33,7 @@ def plot_churn_distribution(df):
     plt.tight_layout()
 
     plt.savefig(
-        "reports/Clientes_Churn.png",
+        "reports/figures/Clientes_Churn.png",
         dpi=300,
         bbox_inches="tight"
     )
@@ -64,7 +64,7 @@ def plot_active_customers_vs_churn(df):
     plt.tight_layout()
 
     plt.savefig(
-        "reports/Churn_Active_Customers.png",
+        "reports/figures/Churn_Active_Customers.png",
         dpi=300,
         bbox_inches="tight"
     )
@@ -87,7 +87,7 @@ def plot_correlation_matrix(df):
     plt.tight_layout()
 
     plt.savefig(
-        "reports/Matriz_de_Correlacion.png",
+        "reports/figures/Matriz_de_Correlacion.png",
         dpi=300,
         bbox_inches="tight"
     )

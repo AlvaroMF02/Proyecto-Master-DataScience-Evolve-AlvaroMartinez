@@ -9,20 +9,17 @@ __pycache__/
 # jupyter
 .ipynb_checkpoints/
 
-# datasets procesados
+# ignorar contenido generado
 data/processed/*
-!data/processed/.gitkeep
-
-# modelos entrenados
 models/*
-!models/.gitkeep
-
-# ignorar imágenes generadas
 reports/figures/*
+reports/metrics/*
 
-# mantener métricas
-!reports/metrics/
-!reports/metrics/*
+# mantener carpetas vacías
+!data/processed/.gitkeep
+!models/.gitkeep
+!reports/figures/.gitkeep
+!reports/metrics/.gitkeep
 
 # sistema
 .DS_Store

@@ -1,2 +1,24 @@
-.venv
+# entorno virtual
+.venv/
 venv
+# cache python
+__pycache__/
+*.pyc
+
+# jupyter
+.ipynb_checkpoints/
+
+# datasets procesados
+data/processed/*
+!data/processed/.gitkeep
+
+# modelos entrenados
+models/*
+!models/.gitkeep
+
+# outputs generados
+reports/*
+!reports/.gitkeep
+
+# sistema
+.DS_Store

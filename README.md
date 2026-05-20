@@ -1,17 +1,22 @@
-# Customer Churn Prediction Evolve Alvaro Martinez
+# Customer Churn Prediction — Proyecto Máster Evolve
 
-Machine Learning project focused on predicting customer churn in a banking environment using classification models and business-oriented analysis.
+Proyecto de Machine Learning y Análisis de Datos enfocado en la predicción de abandono de clientes (*customer churn*) en un entorno bancario mediante modelos de clasificación, feature engineering y análisis orientado a negocio.
 
-The project includes:
-
-* Exploratory Data Analysis (EDA)
-* Data preprocessing and feature engineering
-* Model training and evaluation
-* Power BI dashboard for business insights
+El proyecto combina análisis exploratorio de datos, preprocesamiento, modelado predictivo y visualización de información para identificar patrones de comportamiento asociados al abandono de clientes.
 
 ---
 
-# Technologies Used
+# Objetivos del Proyecto
+
+* Analizar patrones de comportamiento de clientes
+* Identificar factores relacionados con el churn
+* Comparar distintos modelos de clasificación
+* Crear visualizaciones y métricas orientadas a negocio
+* Construir un pipeline modular y reproducible
+
+---
+
+# Tecnologías Utilizadas
 
 * Python
 * Pandas
@@ -22,39 +27,88 @@ The project includes:
 * Seaborn
 * Jupyter Notebook
 * Power BI
+* Joblib
 
 ---
 
-# Project Structure
+# Estructura del Proyecto
 
 ```bash
-├── dashboard/          # Power BI dashboard files
 ├── data/
-│   ├── raw/            # Original dataset
-│   └── processed/      # Cleaned and processed datasets
-├── models/             # Trained models (.pkl)
+│   ├── raw/                    # Dataset original
+│   └── processed/              # Datos procesados
+│
+├── models/                     # Modelos entrenados (.pkl)
+│
 ├── notebooks/
 │   ├── 01_eda.ipynb
 │   ├── 02_preprocessing.ipynb
 │   └── 03_models.ipynb
-├── README.md
-└── requirements.txt
+│
+├── reports/
+│   └── metrics/                # Métricas e importancia de variables
+│
+├── src/
+│   ├── io.py
+│   ├── cleaning.py
+│   ├── features.py
+│   ├── viz.py
+│   ├── utils.py
+│   └── models.py
+│
+├── dashboard/                  # Dashboard Power BI
+│
+├── main.py                     # Pipeline reproducible
+├── requirements.txt
+└── README.md
 ```
 
 ---
 
-# Machine Learning Models
+# Análisis Exploratorio de Datos (EDA)
 
-The following models were trained and evaluated:
+La fase de EDA se centró en comprender el comportamiento de los clientes e identificar patrones relacionados con el abandono bancario.
+
+Principales análisis realizados:
+
+* Distribución de churn
+* Churn según edad y grupos de edad
+* Clientes activos vs inactivos
+* Correlación entre variables numéricas y categóricas
+
+Las visualizaciones generadas se exportan automáticamente dentro de `reports/`.
+
+---
+
+# Preprocesamiento y Feature Engineering
+
+El pipeline de preprocesamiento incluye:
+
+* Verificación de valores nulos
+* Codificación de variables categóricas
+* Conversión de variables booleanas
+* Escalado de variables numéricas
+* División train/test
+
+Nuevas características creadas:
+
+* `loyal_customer`
+* `age_group`
+
+Toda la lógica de limpieza y transformación fue modularizada dentro de la carpeta `src/`.
+
+---
+
+# Modelos de Machine Learning
+
+Los siguientes modelos fueron entrenados y evaluados:
 
 * Logistic Regression
 * Decision Tree
 * Random Forest
 * XGBoost
 
-The best overall performance was achieved with XGBoost and Random Forest.
-
-Main evaluation metrics:
+Métricas utilizadas:
 
 * Accuracy
 * Precision
@@ -62,69 +116,106 @@ Main evaluation metrics:
 * F1 Score
 * ROC-AUC
 
+Los mejores resultados se obtuvieron utilizando modelos ensemble, especialmente XGBoost y Random Forest.
+
 ---
 
-# Main Objectives
+# Resultados del Proyecto
 
-* Analyze customer behavior patterns
-* Identify factors related to churn
-* Compare multiple classification models
-* Create business-oriented visualizations and dashboards
+El proyecto obtuvo un buen rendimiento predictivo manteniendo interpretabilidad desde el punto de vista de negocio.
+
+Principales hallazgos:
+
+* Los clientes de mayor edad presentan mayor probabilidad de abandono
+* Los clientes inactivos tienen más tendencia al churn
+* Alemania presenta mayor tasa de abandono respecto a otros países
+* Los clientes considerados leales muestran menor churn
+
+Las métricas y reportes generados se exportan automáticamente en `reports/metrics/`.
 
 ---
 
 # Dashboard
 
-The project includes a Power BI dashboard focused on:
+El proyecto incluye un dashboard desarrollado en Power BI centrado en:
 
-* Customer churn analysis
-* Business KPIs
-* Customer segmentation
-* Model performance comparison
-* Feature importance visualization
+* Análisis de churn
+* KPIs de negocio
+* Segmentación de clientes
+* Comparativa entre grupos de clientes
+* Importancia de variables
 
 ---
 
-# How to Run
+# Pipeline Reproducible
 
-1. Clone the repository
-2. Install dependencies
+El proyecto incluye un pipeline modular y reproducible ejecutable mediante:
+
+```bash
+python main.py
+```
+
+El pipeline realiza automáticamente:
+
+1. Carga del dataset
+2. Limpieza y transformación de datos
+3. Creación de nuevas características
+4. Generación de visualizaciones
+5. Entrenamiento de modelos
+6. Exportación de métricas y datasets procesados
+7. Guardado de modelos entrenados
+
+---
+
+# Cómo Ejecutar el Proyecto
+
+## Clonar repositorio
+
+```bash
+git clone <repository_url>
+```
+
+## Instalar dependencias
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Open the notebooks in order:
+## Ejecutar pipeline completo
 
-* 01_eda.ipynb
-* 02_preprocessing.ipynb
-* 03_models.ipynb
+```bash
+python main.py
+```
+
+## Abrir notebooks
+
+Orden recomendado:
+
+1. `01_eda.ipynb`
+2. `02_preprocessing.ipynb`
+3. `03_models.ipynb`
+
+---
+
+# Posibles Mejoras Futuras
+
+* Optimización de hiperparámetros
+* Validación cruzada avanzada
+* API de predicción en tiempo real con Flask o FastAPI
+* Mejoras en la interactividad del dashboard
 
 ---
 
-# Results
+# Dataset
 
-The project achieved strong classification results using ensemble models, especially XGBoost, with high ROC-AUC performance and balanced churn detection.
+Bank Customer Churn Dataset:
 
----
-
-# Future Improvements
-
-Possible future improvements for the project:
-
-* Develop a REST API using Flask or FastAPI for real-time churn predictions
-* Create a web interface connected to the trained models
-* Refactor preprocessing and training logic into reusable Python modules (`src/`)
-* Add hyperparameter tuning and cross-validation optimization
-* Deploy the project using cloud services or Docker
-* Improve dashboard interactivity and filtering capabilities
-* Add explainability techniques such as SHAP values for model interpretation
+https://www.kaggle.com/datasets/radheshyamkollipara/bank-customer-churn
 
 ---
-Dataset (https://www.kaggle.com/datasets/radheshyamkollipara/bank-customer-churn)
----
-# Author
+
+# Autor
 
 Álvaro Martínez Flores
 
-Academic project developed during the Master in Artificial Intelligence and Big Data at Evolve.
+Proyecto académico desarrollado durante el Máster en Inteligencia Artificial y Big Data en Evolve Academy.

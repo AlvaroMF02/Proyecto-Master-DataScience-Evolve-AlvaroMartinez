@@ -172,7 +172,7 @@ El pipeline realiza automáticamente:
 ## Clonar repositorio
 
 ```bash
-git clone <repository_url>
+git clone https://github.com/AlvaroMF02/Proyecto-Master-DataScience-Evolve-AlvaroMartinez
 ```
 
 ## Instalar dependencias
